@@ -12,7 +12,3 @@ ssh to container
 kubectl exec -it echo-hostname -c echo-1 sh
 kubectl exec -it echo-hostname -c echo-2 sh
 ```
-
-```bash
-kubectl exec -it echo-hostname -c echo-1 tail -f /pod-data/logs
-```
