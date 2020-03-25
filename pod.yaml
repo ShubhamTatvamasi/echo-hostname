@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: echo-hostname
+spec:
+    containers:
+    - image: shubhamtatvamasi/echo-hostname
+      imagePullPolicy: Always
+      name: echo-1
+      volumeMounts:
+      - mountPath: /pod-data
+        name: pod-volume
+    - image: shubhamtatvamasi/echo-hostname
+      imagePullPolicy: Always
+      name: echo-2
+      volumeMounts:
+      - mountPath: /pod-data
+        name: pod-volume
+    volumes:
+    - name: pod-volume
+      emptyDir: {}
